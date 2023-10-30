@@ -1,0 +1,21 @@
+<child-comp [products]="this.productsForm.value['products'] | json">
+    <div class="container">
+        <form [formGroup]="productsForm">
+            <table class="table" formArrayName="products">
+                <button type="button" (click)="addProduct()">Add Prouct</button>
+                <br />
+                <tr *ngFor="let product of products().controls; let i=index" [formGroupName]="i">
+                    <td>
+                        Product Name: <input type="text" formControlName="prd" class="form-control">
+                    </td>
+                    <td>
+                        Price: <input type="number" formControlName="price" class="form-control">
+                    </td>
+                    <td>
+                        <button (click)="removeProduct(i)" class="red-button">Remove</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</child-comp>
