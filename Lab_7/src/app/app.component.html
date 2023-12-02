@@ -1,0 +1,53 @@
+<h2>Информация об организации</h2>
+<div *ngIf="!(nameError==='')" id="nameError" class="error-text">{{nameError}}</div>
+<div class="field-area">
+  <label>Наименование *</label>
+  <input [(ngModel)]="organizationData.name" style="width: 150px">
+</div>
+<div *ngIf="!(cityError==='')" id="cityError" class="error-text">{{cityError}}</div>
+<div class="field-area">
+  <label>Город *</label>
+  <input [(ngModel)]="organizationData.city" style="width: 150px">
+</div>
+<div *ngIf="!(addressError==='')" id="addressError" class="error-text">{{addressError}}</div>
+<div class="field-area">
+  <label>Адрес *</label>
+  <input [(ngModel)]="organizationData.address" style="width: 150px">
+</div>
+
+<h2>Контактное лицо</h2>
+<div *ngIf="!(contactPersonError==='')" id="contactPersonError" class="error-text">{{contactPersonError}}</div>
+<div class="field-area">
+  <label>Контактное лицо *</label>
+  <input [(ngModel)]="organizationData.contactPerson" style="width: 150px">
+</div>
+<div *ngIf="!(phoneError==='')" id="phoneError" class="error-text">{{phoneError}}</div>
+<div class="field-area">
+  <label>Телефон *</label>
+  <div>+38<input [(ngModel)]="organizationData.phone" style="width: 150px;"></div>
+</div>
+<div *ngIf="!(emailError==='')" id="emailError" class="error-text">{{emailError}}</div>
+<div class="field-area">
+  <label>Email *</label>
+  <input [(ngModel)]="organizationData.email" style="width: 150px">
+</div>
+
+<h2>Информация об объекте</h2>
+<div *ngIf="!(objectNameError==='')" id="objectNameError" class="error-text">{{objectNameError}}</div>
+<div class="field-area">
+  <label>Название *</label>
+  <input [(ngModel)]="organizationData.workObjectName" style="width: 150px">
+</div>
+
+
+<div id="applicationAreaError" class="error-text">{{applicationAreaError}}</div>
+<div class="field-area" style="width: 603px;">
+  <label>Область применения ПТО:</label>
+  <div>
+    <input type="button" class="button" value="Отопление" (click)="setApplicationArea('Отопление')">
+    <input type="button" class="button" value="Вентиляция" (click)="setApplicationArea('Вентиляция')">
+    <input type="button" class="button" value="ГВС" (click)="setApplicationArea('ГВС')">
+  </div>
+</div>
+<br>
+<input type="button" value="Отправить" (click)="checkData()" class="button">

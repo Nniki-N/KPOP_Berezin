@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Selected Users List
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid *ngFor="let user of selected" >
+        <ion-row>
+            <ion-col>{{user.name.first}}</ion-col>
+            <ion-col>{{user.email}}</ion-col>
+            <ion-col>{{user.login.username}}</ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
